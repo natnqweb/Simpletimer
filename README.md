@@ -4,7 +4,7 @@ there is only one function
 timer() 
 as simple as that you can perform action every amount of time you feed to function for example
 
-Simpletimer timer1;
+Simpletimer timer1;	
 timer1.timer(1000)
 {
 //entry every 1000ms
