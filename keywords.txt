@@ -1,0 +1,4 @@
+# Syntax Coloring Map For LCD_I2C
+
+# Datatypes (KEYWORD1)
+timer KEYWORD1
