@@ -9,3 +9,4 @@ timer1.timer(1000)
 {
 //entry every 1000ms
 }
+i use it as a tool in my projects so i don't need to repeat myself creating timers
