@@ -1,0 +1,4 @@
+# Syntax Coloring Map For Simpletimer
+
+# Datatypes (KEYWORD1)
+timer KEYWORD1
