@@ -1,4 +1,6 @@
 # Syntax Coloring Map For Simpletimer
+# Classes (KEYWORD1)
+Simpletimer KEYWORD1
 
-# Datatypes (KEYWORD1)
-timer KEYWORD1
+# Datatypes (KEYWORD2
+timer KEYWORD2
