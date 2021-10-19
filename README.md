@@ -15,4 +15,18 @@ as simple as that you can perform action every amount of time you feed to functi
 in Version 2.0 you can register callbacks now only 'void functions(void)'
 
 # callback example
+    #include "Simpletimer.h"
+    // callback function cant take anything and return anything
+    Simpletimer timer1;
+    void callback1(){
+      Serial.println("entry every 1 sec");
+    }
 
+    void setup(){
+    Serial.begin(9600);
+    timer1.register_callback(callback1);
+    }
+    void loop(){
+      timer1.call_callback(1000);
+
+    }
