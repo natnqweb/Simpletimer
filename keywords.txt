@@ -6,7 +6,7 @@ Simpletimer  KEYWORD1
 # Functions  (KEYWORD2)
 timer  KEYWORD2
 register_callback  KEYWORD2
-call_callback  KEYWORD2
+run  KEYWORD2
 
 
 # Datatypes && Variables (KEYWORD3)

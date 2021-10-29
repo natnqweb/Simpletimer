@@ -9,7 +9,7 @@ class Simpletimer                       // my timer function helps to manage tas
 	
     bool timer(unsigned long waitTime);//manage your tasks enter time then timer function will return true every given time, remember that it returns true at the beggining of program
 	void register_callback(callback cb);
-	void call_callback(unsigned long timing);
+	void run(unsigned long timing);
 	
 	private:
 	callback _cb;

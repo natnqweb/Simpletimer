@@ -16,7 +16,7 @@
 	{
 		_cb=cb;
 	}
-	void Simpletimer::call_callback(unsigned long timing)
+	void Simpletimer::run(unsigned long timing)
 	{
 		if (timer(timing)){
 			_cb();
