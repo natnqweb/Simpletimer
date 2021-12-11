@@ -10,6 +10,7 @@ Serial.begin(9600);
 timer1.register_callback(callback1);
 }
 void loop(){
-  timer1.call_callback(1000);
+
+  timer1.run(1000);
 
 }
