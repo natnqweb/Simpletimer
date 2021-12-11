@@ -1,7 +1,7 @@
 
 # Simpletimer
-a timer based on millis that will make your coding a lot easier
-there is only one function 
+a timer based on micros that will make your coding a lot easier
+
 timer() 
 as simple as that you can perform action every amount of time you feed to function for example
 
@@ -11,7 +11,7 @@ as simple as that you can perform action every amount of time you feed to functi
     //entry every 1000ms
     }
     i use it as a tool in my projects so i don't need to repeat myself creating timers
-in Version 2.0 you can register callbacks now only 'void functions(void)'
+from Version 2.0 up you can register callbacks now only 'void functions(void)'
 
 # callback example
     #include "Simpletimer.h"
@@ -29,3 +29,49 @@ in Version 2.0 you can register callbacks now only 'void functions(void)'
       timer1.call_callback(1000);
 
     }
+version 2.1
+# multiple callbacks example
+    #include "Simpletimer.h"
+    // callback function cant take anything and return anything
+    #define ledpin 8
+
+    Simpletimer multicb;
+
+    void callback1();
+    void callback2();
+    void callback3();
+    void blink();
+    void callback1(){
+      Serial.println(F("entry every 1 sec"));
+    }
+    void callback2(){
+      Serial.println(F("entry every 0.5 sec"));
+    }
+    void callback3(){
+      Serial.println(F("entry every 0.2 sec"));
+    }
+    volatile bool state=false;
+    void blink(){
+    state=!state;
+    }
+    void setup(){
+        pinMode(ledpin,OUTPUT);
+        size_t number_of_callbacks=4;
+        Simpletimer::callback all_callbacks[4]={callback1,callback2,callback3,blink};
+        unsigned long timers[4]={1000,500,200,199};
+
+    Serial.begin(115200);
+    multicb.register_multiple_callbacks(all_callbacks,timers,number_of_callbacks);
+    Serial.println(F("program started"));
+
+    }
+    void loop(){
+
+
+
+        multicb.run();
+        digitalWrite(ledpin,state);
+
+
+    }
+
