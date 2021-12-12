@@ -2,6 +2,7 @@
 
 # Classes (KEYWORD1)
 Simpletimer  KEYWORD1
+RunOnce KEYWORD1
 
 # Functions  (KEYWORD2)
 timer  KEYWORD2
