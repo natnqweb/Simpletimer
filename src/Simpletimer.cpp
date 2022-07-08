@@ -35,7 +35,7 @@ void Simpletimer::run(unsigned long timing)
     }
 }
 
-void Simpletimer::register_multiple_callbacks(callback *callbacks, unsigned long *timeperiods, size_t number_of_callbacks)
+void Simpletimer::register_multiple_callbacks(callback *callbacks, unsigned long *timeperiods, size_t number_of_callbacks /*= 1*/)
 {
 
     OnlyOnce.Run([&]()
