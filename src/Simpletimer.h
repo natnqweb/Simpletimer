@@ -31,7 +31,7 @@ public:
 	void register_callback(callback cb);
 	void run(unsigned long timing = 0);
 
-	void register_multiple_callbacks(callback *, unsigned long *timeperiod, size_t number_of_callbacks);
+	void register_multiple_callbacks(callback *, unsigned long *timeperiod, size_t number_of_callbacks = 1);
 
 private:
 	callback _cb;
