@@ -8,11 +8,12 @@ void callback1(){
 }
 unsigned long callbacksleep = 1000;
 void setup(){
-	pinMode(ledpin,OUTPUT);
+
 
 
 Serial.begin(115200);
-timer.register_multiple_callbacks(&callback1,&callbacksleep);
+Simpletimer::callback cb = &callback1;
+timer.register_multiple_callbacks(&cb,&callbacksleep);
 Serial.println(F("program started"));
 
 }
