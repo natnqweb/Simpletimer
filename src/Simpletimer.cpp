@@ -21,7 +21,7 @@ void Simpletimer::run(unsigned long timing)
 {
     if (multiple_callbacks)
     {
-        for (size_t i = 0; i < _number_of_registered_callbacks; i++)
+        for (auto i = 0; i < _number_of_registered_callbacks; i++)
         {
             timerz[i].run(_time_periods[i]);
         }
@@ -45,7 +45,7 @@ void Simpletimer::register_multiple_callbacks(callback *callbacks, unsigned long
                      _number_of_registered_callbacks = number_of_callbacks;
                  });
     _time_periods = timeperiods;
-    for (int i = 0; i < number_of_callbacks; i++)
+    for (auto i = 0; i < number_of_callbacks; i++)
     {
         timerz[i].register_callback(callbacks[i]);
     }
