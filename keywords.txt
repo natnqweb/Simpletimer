@@ -1,18 +1,18 @@
 # Syntax Coloring Map For Simpletimer
 
 # Classes (KEYWORD1)
-Simpletimer  KEYWORD1
+Simpletimer KEYWORD1
 RunOnce KEYWORD1
 
 # Functions  (KEYWORD2)
-timer  KEYWORD2
-register_callback  KEYWORD2
-run  KEYWORD2
+timer   KEYWORD2
+register_callback   KEYWORD2
+run KEYWORD2
 register_multiple_callbacks KEYWORD2
 
 
-# Datatypes && Variables (KEYWORD3)
-callback  KEYWORD3
-Simpletimer::callback KEYWORD3
-before  KEYWORD3
-_cb  KEYWORD3
+# Datatypes && Variables (LITERAL1)
+callback    LITERAL1
+Simpletimer::callback   LITERAL1
+before  LITERAL1
+_cb LITERAL1
