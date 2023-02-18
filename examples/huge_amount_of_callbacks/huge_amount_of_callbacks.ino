@@ -122,57 +122,57 @@ static Simpletimer::callback all_callbacks[]
 
 static unsigned long timers[]
 {
-  1000, //callback1    -- 1
-  9512, //callback2    -- 2
-  3111, //callback3    -- 3
-  3000, //callback4    -- 4
-  1500, //callback5    -- 5
-  1600, //callback6    -- 6
-  5000, //callback7    -- 7
-  6000, //callback8    -- 8
-  7000, //callback9    -- 9
-  8000, //callback10   -- 10
-  9000, //callback11   -- 11
-  9500, //callback12   -- 12
-  9200, //callback13   -- 13
-  9700, //callback14   -- 14
-  2010, //callback15,  -- 15
-  2100, //callback16,  -- 16
-  2200, //callback17,  -- 17
-  2300, //callback18,  -- 18
-  2240, //callback19,  -- 19
-  2222, //callback20,  -- 20
-  2212, //callback21,  -- 21
-  2412, //callback22,  -- 22
-  2532, //callback23,  -- 23
-  2432, //callback24,  -- 24
-  2123, //callback25,  -- 25
-  2119, //callback26,  -- 26
-  2466, //callback27,  -- 27
-  2431, //callback28,  -- 28
-  2464, //callback29,  -- 29
-  2599, //callback30,  -- 30
-  2985, //callback31,  -- 31
-  3260, //callback32,  -- 32
-  3357, //callback33,  -- 33
-  4607, //callback34,  -- 34
-  5678, //callback35,  -- 35
-  5357, //callback36,  -- 36
-  4267, //callback37,  -- 37
-  5809, //callback38,  -- 38
-  6777, //callback39,  -- 39
-  5555, //callback40,  -- 40
-  6123, //callback41,  -- 41
-  8788, //callback42,  -- 42
-  8888, //callback43,  -- 43
-  9133, //callback44,  -- 44
-  1565, //callback45,  -- 45
-  6666, //callback46,  -- 46
-  8888, //callback47,  -- 47
-  5444, //callback48,  -- 48
-  4321, //callback49,  -- 49
-  4333, //callback50,  -- 50
-  500,  //Blink        -- 51
+  1000, // ms - callback1    -- 1
+  9512, // ms - callback2    -- 2
+  3111, // ms - callback3    -- 3
+  3000, // ms - callback4    -- 4
+  1500, // ms - callback5    -- 5
+  1600, // ms - callback6    -- 6
+  5000, // ms - callback7    -- 7
+  6000, // ms - callback8    -- 8
+  7000, // ms - callback9    -- 9
+  8000, // ms - callback10   -- 10
+  9000, // ms - callback11   -- 11
+  9500, // ms - callback12   -- 12
+  9200, // ms - callback13   -- 13
+  9700, // ms - callback14   -- 14
+  2010, // ms - callback15,  -- 15
+  2100, // ms - callback16,  -- 16
+  2200, // ms - callback17,  -- 17
+  2300, // ms - callback18,  -- 18
+  2240, // ms - callback19,  -- 19
+  2222, // ms - callback20,  -- 20
+  2212, // ms - callback21,  -- 21
+  2412, // ms - callback22,  -- 22
+  2532, // ms - callback23,  -- 23
+  2432, // ms - callback24,  -- 24
+  2123, // ms - callback25,  -- 25
+  2119, // ms - callback26,  -- 26
+  2466, // ms - callback27,  -- 27
+  2431, // ms - callback28,  -- 28
+  2464, // ms - callback29,  -- 29
+  2599, // ms - callback30,  -- 30
+  2985, // ms - callback31,  -- 31
+  3260, // ms - callback32,  -- 32
+  3357, // ms - callback33,  -- 33
+  4607, // ms - callback34,  -- 34
+  5678, // ms - callback35,  -- 35
+  5357, // ms - callback36,  -- 36
+  4267, // ms - callback37,  -- 37
+  5809, // ms - callback38,  -- 38
+  6777, // ms - callback39,  -- 39
+  5555, // ms - callback40,  -- 40
+  6123, // ms - callback41,  -- 41
+  8788, // ms - callback42,  -- 42
+  8888, // ms - callback43,  -- 43
+  9133, // ms - callback44,  -- 44
+  1565, // ms - callback45,  -- 45
+  6666, // ms - callback46,  -- 46
+  8888, // ms - callback47,  -- 47
+  5444, // ms - callback48,  -- 48
+  4321, // ms - callback49,  -- 49
+  4333, // ms - callback50,  -- 50
+  500,  // ms - Blink        -- 51
 };
 
 void callback1() {
