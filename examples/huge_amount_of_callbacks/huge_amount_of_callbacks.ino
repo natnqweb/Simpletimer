@@ -1,6 +1,7 @@
 #include "Simpletimer.h"
 
 // callback function cant take anything and return anything
+// Notice that even though we have 51 Tasks LED still blinks normally as one of the tasks
 #define ledpin LED_BUILTIN
 
 Simpletimer multicb{};
@@ -365,7 +366,14 @@ void setup() {
     pinMode(ledpin, OUTPUT);
 
     Serial.begin(115200);
+    if ((sizeof(timers) / sizeof(timers[0])) != (sizeof(all_callbacks) / sizeof(all_callbacks[0]))) {
 
+        Serial.println(F("Error: number of timers differ from number of callbacks!"));
+        Serial.print(F("Number of timers: "));
+        Serial.println((sizeof(timers) / sizeof(timers[0])));
+        Serial.print(F("Number of callbacks: "));
+        Serial.println((sizeof(all_callbacks) / sizeof(all_callbacks[0])));
+    }
     multicb.register_multiple_callbacks(all_callbacks, timers, sizeof(timers) / sizeof(timers[0]));
     Serial.print(F("Registered : "));
     Serial.print(sizeof(timers) / sizeof(timers[0]));
