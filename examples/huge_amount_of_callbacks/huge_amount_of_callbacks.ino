@@ -122,8 +122,8 @@ static Simpletimer::callback all_callbacks[]
 static unsigned long timers[]
 {
   1000, //callback1    -- 1
-  400,  //callback2    -- 2
-  200,  //callback3    -- 3
+  9512, //callback2    -- 2
+  3111, //callback3    -- 3
   3000, //callback4    -- 4
   1500, //callback5    -- 5
   1600, //callback6    -- 6
@@ -179,11 +179,11 @@ void callback1() {
 }
 
 void callback2() {
-    Serial.println(F("callback2: entry every 0.4 sec"));
+    Serial.println(F("callback2: entry every 9.512 sec"));
 }
 
 void callback3() {
-    Serial.println(F("callback3: entry every 0.2 sec"));
+    Serial.println(F("callback3: entry every 3.111 sec"));
 }
 
 void callback4() {
@@ -230,7 +230,7 @@ void callback14() {
     Serial.println(F("callback14: entry every 9.7 sec"));
 }
 void callback15() {
-    Serial.println(F("callback14: entry every 9.7 sec"));
+    Serial.println(F("callback15: entry"));
 }
 
 void callback16() {
