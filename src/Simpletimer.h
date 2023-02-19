@@ -63,8 +63,8 @@ public:
 	SimpletimerManager(Simpletimer*);
 	void limit_all_tasks_run_counts(unsigned long limit);
 	void restart_all_run_counts();
-	bool SetRunLimitOnCallback(unsigned int index, unsigned long run_limit);
-	bool ResetRunLimitOnCallback(unsigned int index);
+	bool limit_number_of_calls_to_callback(unsigned int callback_index, unsigned long number_of_calls_limit);
+	bool reset_number_of_calls_limit(unsigned int index);
 
 
 	Simpletimer* get_timer(unsigned int index);

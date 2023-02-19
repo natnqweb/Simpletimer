@@ -128,18 +128,18 @@ void SimpletimerManager::restart_all_run_counts()
     get_timer()->reset_run_limit();
 }
 
-bool SimpletimerManager::SetRunLimitOnCallback(unsigned int index, unsigned long run_limit)
+bool SimpletimerManager::limit_number_of_calls_to_callback(unsigned int callback_index, unsigned long number_of_calls_limit)
 {
-    auto timer = get_timer(index);
+    auto timer = get_timer(callback_index);
     if (!timer) return false;
 
-    timer->set_run_limit(run_limit);
+    timer->set_run_limit(number_of_calls_limit);
     return true;
 }
 
-bool SimpletimerManager::ResetRunLimitOnCallback(unsigned int index)
+bool SimpletimerManager::reset_number_of_calls_limit(unsigned int callback_index)
 {
-    auto timer = get_timer(index);
+    auto timer = get_timer(callback_index);
     if (!timer) return false;
 
     timer->reset_run_limit();
