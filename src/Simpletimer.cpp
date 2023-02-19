@@ -1,5 +1,5 @@
 #include <Simpletimer.h>
-
+struct TimersArray { Simpletimer* p_timer; unsigned int n_size; };
 Simpletimer::Simpletimer() = default;
 Simpletimer::~Simpletimer()
 {
@@ -60,7 +60,7 @@ void Simpletimer::register_multiple_callbacks(callback* callbacks, unsigned long
     _multiple_callbacks = true;
 }
 
-struct { Simpletimer* p_timer; unsigned int n_size; } Simpletimer::get_timers()
+TimersArray Simpletimer::get_timers()
 {
     if (!_timerz || !_multiple_callbacks)
         return { nullptr, 0 };
@@ -124,7 +124,9 @@ bool SimpletimerManager::run(unsigned long timing, unsigned int amount_of_times_
 
 Simpletimer* SimpletimerManager::get_timer(unsigned int index)
 {
-    auto [timer, number_of_timers] = get_timer()->get_timers();
+    TimersArray arr = get_timer()->get_timers();
+    auto timer = arr.p_timer;
+    auto number_of_timers = arr.n_size;
 
     if (!timer || number_of_timers == 0 || index >= number_of_timers)
     {

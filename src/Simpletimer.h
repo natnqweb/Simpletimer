@@ -2,6 +2,7 @@
 #define SIMPLETIMER_H
 
 #include <Arduino.h>
+struct TimersArray;
 
 class class_with_callbacks
 {
@@ -38,7 +39,7 @@ public:
 	unsigned long get_run_count();
 
 	void register_multiple_callbacks(callback*, unsigned long* timeperiod, unsigned int number_of_callbacks = 1);
-	struct { Simpletimer* p_timer; unsigned int n_size; } get_timers();
+	TimersArray get_timers();
 
 private:
 	unsigned long _run_count{0};
