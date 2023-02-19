@@ -9,6 +9,11 @@ Simpletimer::~Simpletimer()
 
 bool Simpletimer::timer(unsigned long waitTime) //manage your tasks enter time then timer function will return true every given time, remember that it returns true at the beggining of program
 {
+    if (_run_limit_is_set && _run_count >= _run_limit)
+    {
+        return false;
+    }
+
     if (micros() - _before >= waitTime * 1000U)
     {
         _before = micros();
@@ -73,57 +78,78 @@ unsigned long Simpletimer::get_run_count()
     return _run_count;
 }
 
+void Simpletimer::set_run_limit(unsigned long run_x_times)
+{
+    _run_limit = run_x_times;
+    _run_limit_is_set = true;
+}
+void Simpletimer::reset_run_limit()
+{
+    _run_limit = 0;
+    _run_limit_is_set = false;
+}
+
 SimpletimerManager::SimpletimerManager(Simpletimer* timer): _simpleTimer(timer)
 {
 }
 
-bool SimpletimerManager::run(unsigned long timing, unsigned int amount_of_times_to_run)
+void SimpletimerManager::limit_all_tasks_run_counts(unsigned long limit)
 {
     if (!get_timer())
-        return false;
-
-    if (get_timer()->get_run_count() >= amount_of_times_to_run)
     {
-        return false;
-    }
-
-    get_timer()->run(timing);
-    return true;
-}
-
-void SimpletimerManager::run(unsigned long timing)
-{
-    if (!get_timer())
         return;
-    get_timer()->run(timing);
-}
-
-void SimpletimerManager::run(unsigned int* run_constrains)
-{
-    static const unsigned long constrains_size = sizeof(run_constrains) / sizeof(run_constrains[0]);
-    for (unsigned long i = 0; i < constrains_size; i++)
-    {
-        (void)run(0, run_constrains[i], i);
     }
-}
-
-bool SimpletimerManager::run(unsigned long timing, unsigned int amount_of_times_to_run, unsigned int index_of_timer)
-{
-    auto timer = get_timer(index_of_timer);
-    if (!timer)
-        return false;
-
-    if (timer->get_run_count() >= amount_of_times_to_run)
+    TimersArray arr = get_timer()->get_timers();
+    auto timer = arr.p_timer;
+    auto number_of_timers = arr.n_size;
+    for (unsigned int i = 0; i < number_of_timers; i++)
     {
-        return false;
+        timer[i].set_run_limit(limit);
     }
 
-    timer->run(timing);
+    get_timer()->set_run_limit(limit);
+}
+
+void SimpletimerManager::restart_all_run_counts()
+{
+    if (!get_timer())
+    {
+        return;
+    }
+
+    TimersArray arr = get_timer()->get_timers();
+    auto timer = arr.p_timer;
+    auto number_of_timers = arr.n_size;
+    for (unsigned int i = 0; i < number_of_timers; i++)
+    {
+        timer[i].reset_run_limit();
+    }
+
+    get_timer()->reset_run_limit();
+}
+
+bool SimpletimerManager::SetRunLimitOnCallback(unsigned int index, unsigned long run_limit)
+{
+    auto timer = get_timer(index);
+    if (!timer) return false;
+
+    timer->set_run_limit(run_limit);
     return true;
 }
+
+bool SimpletimerManager::ResetRunLimitOnCallback(unsigned int index)
+{
+    auto timer = get_timer(index);
+    if (!timer) return false;
+
+    timer->reset_run_limit();
+    return true;
+}
+
 
 Simpletimer* SimpletimerManager::get_timer(unsigned int index)
 {
+    if (!get_timer()) return nullptr;
     TimersArray arr = get_timer()->get_timers();
     auto timer = arr.p_timer;
     auto number_of_timers = arr.n_size;

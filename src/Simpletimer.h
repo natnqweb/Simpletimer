@@ -37,12 +37,16 @@ public:
 	void register_callback(callback cb);
 	void run(unsigned long timing = 0);
 	unsigned long get_run_count();
+	void set_run_limit(unsigned long run_x_times);
+	void reset_run_limit();
 
 	void register_multiple_callbacks(callback*, unsigned long* timeperiod, unsigned int number_of_callbacks = 1);
 	TimersArray get_timers();
 
 private:
-	unsigned long _run_count{0};
+	bool _run_limit_is_set{false};
+	unsigned long _run_limit{ 0 };
+	unsigned long _run_count{ 0 };
 	callback _cb{};
 	unsigned long* _time_periods{ nullptr };
 	unsigned long _before{ 0 };
@@ -57,10 +61,11 @@ class SimpletimerManager
 	Simpletimer* _simpleTimer;
 public:
 	SimpletimerManager(Simpletimer*);
-	bool run(unsigned long timing, unsigned int amount_of_times_to_run);
-	bool run(unsigned long timing, unsigned int amount_of_times_to_run, unsigned int index_of_timer);
-	void run(unsigned long timing);
-	void run(unsigned int* run_constrains);
+	void limit_all_tasks_run_counts(unsigned long limit);
+	void restart_all_run_counts();
+	bool SetRunLimitOnCallback(unsigned int index, unsigned long run_limit);
+	bool ResetRunLimitOnCallback(unsigned int index);
+
 
 	Simpletimer* get_timer(unsigned int index);
 	Simpletimer* get_timer();
