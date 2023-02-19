@@ -40,7 +40,7 @@ void setup() {
 }
 
 void loop() {
-    //after 10s timer2 will be triggered end reset all timers run limit and process will repeat
+    //after 10s timer2 will be triggered end reset all timers
     if (timer2.timer(10000)) {
         cbmanager.restart_all_run_counts();
     }
