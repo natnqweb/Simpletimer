@@ -14,7 +14,9 @@ as simple as that you can perform action every amount of time you feed to functi
     }
 ```
 
-from Version 2.0 up, you can register callbacks now only 'void functions(void)'
+## from Version 2.0 up, you can register callbacks now only 'void functions(void)'
+
+## from Version 2.1.7 there is callback manager and Simpletimer can manage his own runtime 
 
 # callback example
 

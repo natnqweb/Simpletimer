@@ -1,16 +1,26 @@
 # Syntax Coloring Map For Simpletimer
 
 # Classes (KEYWORD1)
-Simpletimer	KEYWORD1
-RunOnce	KEYWORD1
-class_with_callbacks	KEYWORD1
+Simpletimer KEYWORD1
+RunOnce KEYWORD1
+class_with_callbacks    KEYWORD1
+SimpletimerManager  KEYWORD1
 
 # Functions  (KEYWORD2)
 timer	KEYWORD2
 register_callback	KEYWORD2
 run	KEYWORD2
 register_multiple_callbacks	KEYWORD2
-
+get_run_count   KEYWORD2
+set_run_limit   KEYWORD2
+reset_run_limit KEYWORD2
+register_multiple_callbacks KEYWORD2
+get_timers  KEYWORD2
+limit_all_tasks_run_counts  KEYWORD2
+restart_all_run_counts  KEYWORD2
+limit_number_of_calls_to_callback   KEYWORD2
+reset_number_of_calls_limit KEYWORD2
+get_timer   KEYWORD2
 
 # Datatypes && Variables (LITERAL1)
 callback	LITERAL1
